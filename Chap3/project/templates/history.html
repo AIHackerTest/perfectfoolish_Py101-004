@@ -1,0 +1,16 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block title %}查询历史{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          {% for item in message[1] %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+{% endblock %}

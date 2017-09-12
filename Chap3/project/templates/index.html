@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}首页{% endblock %}
+{% block content %}
+  <form action="" method="post" class="form-box">
+    <div class="input text">
+      {{ form.name.label }} {{ form.name }}
+    </div>
+    <div class="input submit">
+      <input type="submit" value="查询" />
+    </div>
+  </form>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          {% for item in message[1] %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+{% endblock %}

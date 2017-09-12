@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/style.css">
+    <title>{% block title %}{% endblock %} - 天气查询</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        {% block header %}
+        <div class="item"><a href="/">首页</a></div>
+        <div class="item"><a href="/history">查询历史</a></div>
+        <div class="item"><a href="/help">帮助</a></div>
+        {% endblock %}
+      </div>
+      <div id="content">{% block content %}{% endblock %}</div>
+      <div id="footer">
+        {% block footer %}
+        Copyright 2017 by <a href="http://perfectfoolish.logdown.com/">Fulei</a>.
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
